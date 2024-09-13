@@ -36,3 +36,40 @@
 .logged-in {
   display: none;
 }
+.no-show {
+  display: none;
+}
+.show-greeting {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+.expense-form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.expense-form input {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid black;
+}
+.expense-form button {
+  background-color: rgb(0, 126, 126);
+  color: white;
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.2s transform ease;
+}
+.expense-form button:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
