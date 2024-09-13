@@ -29,6 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     checkForUser();
     const createAnExpenseDiv = (expenseData) => {
+        const expenseContainer = document.createElement("div");
+        const largeContainer = document.querySelector(".large-expense-container");
+        expenseContainer.className = "expense-container";
+        const expenseName = document.createElement("p");
+        expenseName.textContent = expenseData.expenseName;
+        const expenseAmount = document.createElement("p");
+        expenseAmount.textContent = expenseData.expenseAmount.toString();
+        expenseContainer.appendChild(expenseName);
+        expenseContainer.appendChild(expenseAmount);
+        largeContainer === null || largeContainer === void 0 ? void 0 : largeContainer.appendChild(expenseContainer);
     };
     buttonSubmit === null || buttonSubmit === void 0 ? void 0 : buttonSubmit.addEventListener("click", () => {
         let usernameValue = document.querySelector(".username");
@@ -43,5 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             expenseName: expenseNameValue.value,
             expenseAmount: Number(expenseAmountValue.value),
         });
+        expenseNameValue.value = "";
+        expenseAmountValue.value = "";
     });
 });

@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   checkForUser();
   const createAnExpenseDiv = (expenseData: Expense) => {
+    const expenseContainer = document.createElement("div");
+    const largeContainer = document.querySelector(".large-expense-container");
+    expenseContainer.className = "expense-container";
+    const expenseName = document.createElement("p");
+    expenseName.textContent = expenseData.expenseName;
+    const expenseAmount = document.createElement("p");
+    expenseAmount.textContent = expenseData.expenseAmount.toString();
+    expenseContainer.appendChild(expenseName);
+    expenseContainer.appendChild(expenseAmount);
+    largeContainer?.appendChild(expenseContainer);
     //console.log(exp)
   };
   buttonSubmit?.addEventListener("click", () => {
@@ -52,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       expenseName: expenseNameValue.value,
       expenseAmount: Number(expenseAmountValue.value),
     });
+    expenseNameValue.value = "";
+    expenseAmountValue.value = "";
     //console.log(expenseNameValue.value);
     //console.log(expenseAmountValue.value);
   });
